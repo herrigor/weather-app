@@ -1,0 +1,193 @@
+body{
+    font-size: 16px;
+    font-family: Roboto, sans-serif;
+}
+h1{
+    text-transform: uppercase;
+    font-size: 1.25em;
+    color: #ffffff;
+    margin-bottom: .8em;
+}
+h2{
+    font-size: 2.25em;
+    color: #3c3c3c;
+}
+h3{
+    font-size: 1.5em;
+    margin-bottom: .8em;
+}
+small{
+    font-size: .5em;
+    opacity: .5;
+    font-style: italic;
+}
+.input-group>.custom-select:not(:last-child),
+.input-group>.form-control:not(:last-child){
+    border-width: 0px 0 0 1px;
+    z-index: 0;
+}
+form button{
+    height: 48px;
+    border-radius: 0 4px 4px 0;
+    box-shadow: 0 4px 8px 0 rgba(150, 117, 117, 0.2);
+    background-color: #ffffff;
+    border:none;
+    border-color: #ced4da;
+    border-width: 0 2px 2px 0;
+    z-index: 1;
+}
+.main-header {
+    width: 100%;
+    padding: 80px 0 120px;
+    background-color: #39a3db;
+    text-align: center;
+}
+.form-control{
+    width: 100%;
+    height: 48px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+}
+main{
+    margin-bottom: 4em;
+}
+ul.px-0{
+    list-style: none;
+}
+.city-list{
+    margin-top: -3em;
+    padding: 0;
+}
+.city-card{
+    padding: 2em 1.2em 2.2em;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, .3);
+    background-color: #ffffff;
+    cursor: pointer;
+}
+.average-temperature{
+    opacity: .75;
+    font-size: 3em;
+    font-weight: 700;
+    text-align: center;
+    color: #3c3c3c;
+}
+.city-card:hover .average-temperature{
+    opacity: 1;
+}
+.city-name{
+    font-size: 1.75em;
+    margin-bottom: .5em;
+    font-weight: 700;
+    color: #39a3db;
+}
+.details{
+    font-size: .9em;
+    margin-bottom: 0;
+    color: #3c3c3c;
+    opacity: .5;
+}
+.details li{
+    display: flex;
+    justify-content: space-between;
+}
+.temp{
+    font-weight: 700;
+}
+.max-temp{
+    color: #b30000;
+}
+.min-temp{
+    color: #4a90e2;
+}
+.temp-weather{
+    margin-bottom:1.4em;
+    border: 1px solid #f0f0f0;
+    border-radius: 4px;
+}
+.average-temperature{
+    background: #f0f0f0;
+    padding: .6em 0;
+}
+.weather-overview{
+    text-align: center;
+    color: #666;
+    font-size: .8em;
+    font-style: italic;
+}
+.city-overview{
+    margin-bottom: 2em;
+}
+.city-overview .details{
+    font-weight: 700;
+    opacity: 1;
+}
+.city-detailing li{
+    padding: .75em;
+    border-bottom: 1px solid rgba(0,0,0,.1)
+}
+.city-weather{
+    margin-top: 3em;
+}
+.city-weather header{
+    margin-bottom: 2em;
+}
+.city-weather .datetime{
+    opacity: .5;
+}
+.next-days{
+    padding: 0;
+}
+.next-days p{
+    margin: 0;
+}
+.next-days > li{
+    height: 96px;
+    position: relative;
+}
+.next-days > li:hover{
+    background: rgba(109,109,109,.25);
+}
+.next-days > li:nth-of-type(even):hover{
+    background: rgba(109,109,109,.15);
+}
+.next-days > li:before{
+    content: '';
+    display: block;
+    width: 8px;
+    height: 100%;
+    position: absolute;
+    left: -8px;
+    background-color: transparent;
+}
+.next-days > li:first-of-type:before,
+.next-days > li:hover:before{
+    background-color: #39a3db;
+}
+.next-days .details{
+    opacity: 1;
+}
+.next-days .details li{
+    display: inline-block;
+    margin-right: 1.5em;
+}
+.weekday{
+    font-weight: 700;
+}
+.weekday small{
+    display: block;
+    margin-top: -.2em;
+    font-size: .7em;
+}
+@media (min-width:787px){
+    .city-card{
+        padding: 2em 2.5em 2.2em;
+    }
+    .city-overview{
+        padding: 3em 0;
+    }
+    .details{
+        width: 120px;
+    }
+}

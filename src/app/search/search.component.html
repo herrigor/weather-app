@@ -1,0 +1,23 @@
+<ul class="city-list px-0">
+  <li *ngFor="let city of cities; let i = index"
+  class="city-card d-flex justify-content-between align-items-center"
+  [routerLink]="['/details', city.id]">                                           
+    <div class="average-temperature col-4"> {{city.main.temp | number:'0.0-0'}}°C </div>
+    <div class="city-description col-5">
+      <p class="city-name">{{city.name}}, {{city.sys.country}} <img src="http://openweathermap.org/images/flags/{{city.sys.country | lowercase}}.png" alt="" class="country-flag"></p>
+      
+      <div class="details">
+        <ul class="minmax px-0">  
+          <li>Máx <span class="temp max-temp">{{city.main.temp_max | number:'0.0-1'}}°C</span></li>
+          <li>Min <span class="temp min-temp">{{city.main.temp_min | number:'0.0-1'}}°C</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="weather-overview col-3">
+      <img src="https://openweathermap.org/img/wn/{{city.weather[0].icon}}.png" alt="">
+      <p>{{city.weather[0].main}}</p>
+    </div>
+  </li>
+</ul>

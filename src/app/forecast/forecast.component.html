@@ -1,0 +1,63 @@
+<div class="d-flex justify-content-center my-5" *ngIf="isFetching">
+  <div class="spinner-border" role="status">
+  <span  class="sr-only">Loading...</span>
+  </div>
+</div>
+<div class="city-weather" *ngFor="let data of forecast">
+        <header class="text-center">
+            <h2>Weather in {{data.city.country}}, {{data.city.name}}</h2>
+            <p class="datetime">{{data.list[0].dt_txt | date: 'HH:mm MMM d'}}</p>
+        </header>
+    
+        <article class="city-card">
+          <div class="city-overview d-sm-flex justify-content-between align-items-center">
+    
+            <div class="temp-weather d-flex flex-sm-column flex-wrap px-0 col-12 col-sm-6 col-md-6 col-lg-4">
+              <div class="average-temperature col-12 order-1 order-sm-0">{{data.list[0].main.temp | number: '0.0-0'}}°C</div>
+              <div class="weather-overview col-12 order-0 order-sm-1">
+                  <img src="https://openweathermap.org/img/wn/{{data.list[0].weather[0].icon}}@2x.png" alt="">
+                  <p>{{data.list[0].weather[0].description}}</p>
+              </div>
+            </div>
+    
+            <div class="city-detailing col-12 col-sm-6 col-md-6 col-lg-8 offset-lg-1">
+              <div class="details">
+                <ul class="minmax px-0 mb-0">
+                  <li><span class="detail-header">Máx</span> <span class="temp max-temp">{{data.list[0].main.temp_max | number: '0.0-1'}} °C</span></li>
+                  <li><span class="detail-header">Min</span> <span class="temp min-temp">{{data.list[0].main.temp_min | number: '0.0-1'}} °C</span></li>
+                </ul>
+                <ul class="sun-hours px-0 mb-0">
+                  <li><span class="detail-header">Sunrise</span> <span class="sunrise">{{data.city.sunrise | date: 'HH:mm'}}</span></li>
+                  <li><span class="detail-header">Sunset</span> <span class="sunset">{{data.city.sunset | date: 'HH:mm'}}</span></li>
+                </ul>
+              </div>
+            </div>
+    
+          </div>
+          
+          <div class="forecast">
+            <h3>5 days Weather Forecast <small>every 3 hours</small></h3>
+            <ul class="next-days">
+              <li
+              class="d-flex flex-row align-items-center"
+              *ngFor="let list of data.list | slice:1; let i = index">
+                <p class="weekday col-3">{{list.dt_txt | date: 'EEE d MMM' }}<small>{{list.dt_txt | date: 'HH:mm' }}</small></p>
+                <div class="weather-overview col-4">
+                  <p><img src="https://openweathermap.org/img/wn/{{list.weather[0].icon}}.png" alt="">
+                  {{list.weather[0].description}}</p>
+                </div>
+
+                <div class="details col-5">
+                  <ul class="minmax px-0">
+                    <li><span class="temp max-temp">{{list.main.temp_max | number:'0.0-1'}} °C</span></li>
+                    <li><span class="temp min-temp">{{list.main.temp_min | number:'0.0-1'}} °C</span></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+    
+        </article>
+    
+    
+      </div>
